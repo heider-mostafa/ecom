@@ -41,25 +41,24 @@ function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
-    const video = videoRef.current
-    if (video) {
-      video.addEventListener('play', () => setIsPlaying(true))
-      video.addEventListener('pause', () => setIsPlaying(false))
-      
-      // Attempt to play the video
-      const playPromise = video.play()
-      
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          // Autoplay started
-        }).catch(error => {
-          // Autoplay was prevented
-          console.log("Autoplay was prevented:", error)
-        })
-      }
-    }
-  }, [])
+  const video = videoRef.current;
 
+  if (video) {
+    video.muted = true; // Ensure the video is muted for mobile autoplay.
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => setIsPlaying(true)) // Video played successfully
+        .catch((error) => {
+          console.error("Autoplay was prevented:", error);
+          setIsPlaying(false); // Fallback for manual play
+        });
+    }
+  }
+}, []);
+
+  
   const togglePlay = () => {
     const video = videoRef.current
     if (video) {
