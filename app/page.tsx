@@ -35,7 +35,7 @@ export default function Home() {
   )
 }
 
-export function HeroSection() {
+function HeroSection() {
   return (
     <>
       <div className="relative h-[80vh] overflow-hidden">
@@ -50,7 +50,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <div className="text-center text-white">
             <Badge variant="secondary" className="mb-4">Discover Rovi</Badge>
-            <h2 className="text-5xl font-bold mb-4">Say Goodbye To Small Lips</h2>
+            <h2 className="text-5xl font-bold mb-4">Trending Products</h2>
             <p className="text-xl mb-6">Get The Hottest Lipsticks Before They're Gone!</p>
             <Link href="/products">
               <Button size="lg" className="animate-pulse bg-black hover:bg-gray-800">
@@ -252,5 +252,7 @@ function TestimonialCard({ name, rating, text }: TestimonialCardProps) {
     </div>
   )
 }
+
+
 
 
