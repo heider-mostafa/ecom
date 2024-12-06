@@ -132,10 +132,30 @@ function ProductFacts() {
 
 function VideoTestimonials() {
   const testimonials = [
-    { id: 1, name: "Sarah L.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4" },
-    { id: 2, name: "Mia T.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(4)-EuXeEAABr2q6ttyvjsRpNj4UjTXLYs.mp4" },
-    { id: 3, name: "Emma R.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(2)-Zpa8cvbh0rwJ4powJ5qEmCmlQ18jRp.mp4" },
-    { id: 4, name: "Alex K.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-uYuvyhouZQ2AeIdbkfWkFNok8RboDx.mp4" },
+    { 
+      id: 1, 
+      name: "Sarah L.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4", 
+      poster: "https://media-hosting.imagekit.io//020cc25007b14859/Screenshot%202024-12-06%20at%203.48.49%E2%80%AFPM.png?Expires=1733690937&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=jImO8x5SC73SVweX5md2mC8OUAGuTa1np7H~krewHr~0UOskSG6SCpazNYSmX-u8khc-UIVVnidaszzBNpYCb53KFvEE3HB9KT9kmvO8CUBRf~tRP-FUYEkE4RGDJGih9gK9J8U4Zai1qQO8RU-b7KvCYlIbeK3lbpUOjev~-kIiPc4-TE5dwPSPBvfGwhxRyvn1kag5qtGByMVgWjE~pvl8e~cu~49dO0c6gHXwdLAc0Ky0hseIpcEVD8kBbjteYnX6ruecXsAN9aBOrubi7UE95srskVONLRI1tMTvvZ6MWM5LfW0hCeMZyq-MNimTovs7AKc42lePqZ7M8QwlQQ__" 
+    },
+    { 
+      id: 2, 
+      name: "Mia T.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(4)-EuXeEAABr2q6ttyvjsRpNj4UjTXLYs.mp4", 
+      poster: "https://example.com/mia-thumbnail.jpg" 
+    },
+    { 
+      id: 3, 
+      name: "Emma R.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(2)-Zpa8cvbh0rwJ4powJ5qEmCmlQ18jRp.mp4", 
+      poster: "https://example.com/emma-thumbnail.jpg" 
+    },
+    { 
+      id: 4, 
+      name: "Alex K.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-uYuvyhouZQ2AeIdbkfWkFNok8RboDx.mp4", 
+      poster: "https://example.com/alex-thumbnail.jpg" 
+    },
   ]
 
   return (
@@ -145,7 +165,12 @@ function VideoTestimonials() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col">
-              <video controls className="w-full h-48 object-cover bg-gray-200" style={{ objectPosition: 'center 30%' }}>
+              <video 
+                controls 
+                className="w-full h-48 object-cover" 
+                style={{ objectPosition: 'center 30%' }} 
+                poster={testimonial.poster}
+              >
                 <source src={testimonial.video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
