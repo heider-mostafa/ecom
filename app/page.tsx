@@ -175,10 +175,30 @@ function ProductFacts() {
 
 function VideoTestimonials() {
   const testimonials = [
-    { id: 1, name: "Sarah L.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4" },
-    { id: 2, name: "Mia T.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(4)-EuXeEAABr2q6ttyvjsRpNj4UjTXLYs.mp4" },
-    { id: 3, name: "Emma R.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(2)-Zpa8cvbh0rwJ4powJ5qEmCmlQ18jRp.mp4" },
-    { id: 4, name: "Alex K.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-uYuvyhouZQ2AeIdbkfWkFNok8RboDx.mp4" },
+    { 
+      id: 1, 
+      name: "Sarah L.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sarah-poster-zNMxHfXKXBXZXZhHXkVxHGDxTBXTxT.jpg"
+    },
+    { 
+      id: 2, 
+      name: "Mia T.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(4)-EuXeEAABr2q6ttyvjsRpNj4UjTXLYs.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mia-poster-zNMxHfXKXBXZXZhHXkVxHGDxTBXTxT.jpg"
+    },
+    { 
+      id: 3, 
+      name: "Emma R.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(2)-Zpa8cvbh0rwJ4powJ5qEmCmlQ18jRp.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/emma-poster-zNMxHfXKXBXZXZhHXkVxHGDxTBXTxT.jpg"
+    },
+    { 
+      id: 4, 
+      name: "Alex K.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-uYuvyhouZQ2AeIdbkfWkFNok8RboDx.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alex-poster-zNMxHfXKXBXZXZhHXkVxHGDxTBXTxT.jpg"
+    },
   ]
 
   return (
@@ -188,10 +208,19 @@ function VideoTestimonials() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col">
-              <video controls className="w-full h-48 object-cover bg-gray-200" style={{ objectPosition: 'center 30%' }}>
-                <source src={testimonial.video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <div className="relative w-full h-48">
+                <video 
+                  controls 
+                  className="w-full h-full object-cover" 
+                  poster={testimonial.poster}
+                >
+                  <source src={testimonial.video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                  <Play className="w-12 h-12 text-white opacity-70" />
+                </div>
+              </div>
               <div className="p-4 flex-grow">
                 <p className="font-semibold">{testimonial.name}</p>
                 <p className="text-sm text-gray-600">Verified Buyer</p>
@@ -295,7 +324,6 @@ function TestimonialCard({ name, rating, text }: TestimonialCardProps) {
     </div>
   )
 }
-
 
 
 
