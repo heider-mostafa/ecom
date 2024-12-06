@@ -136,7 +136,7 @@ function VideoTestimonials() {
       id: 1, 
       name: "Sarah L.", 
       video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4", 
-      poster: "https://media-hosting.imagekit.io//020cc25007b14859/Screenshot%202024-12-06%20at%203.48.49%E2%80%AFPM.png?Expires=1733690937&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=jImO8x5SC73SVweX5md2mC8OUAGuTa1np7H~krewHr~0UOskSG6SCpazNYSmX-u8khc-UIVVnidaszzBNpYCb53KFvEE3HB9KT9kmvO8CUBRf~tRP-FUYEkE4RGDJGih9gK9J8U4Zai1qQO8RU-b7KvCYlIbeK3lbpUOjev~-kIiPc4-TE5dwPSPBvfGwhxRyvn1kag5qtGByMVgWjE~pvl8e~cu~49dO0c6gHXwdLAc0Ky0hseIpcEVD8kBbjteYnX6ruecXsAN9aBOrubi7UE95srskVONLRI1tMTvvZ6MWM5LfW0hCeMZyq-MNimTovs7AKc42lePqZ7M8QwlQQ__" 
+      poster: "https://media-hosting.imagekit.io//f7db17c37ac24004/Screenshot%202024-12-06%20at%203.58.59%E2%80%AFPM.png?Expires=1733691553&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ACrkrEVLuFKJzSW5CY0-W5HUCtkKxmjSd3O-uYcW0uC24qhFI1eiD7OeEjBJUUPawzkOSLk6pDgIsK4uJhmcsB6RF7WkkzyheifxwBrlgn2aYZwcFGbzHzzgJZqLWuFZNzU~UqG1Q-cfpTdNNdJCSzTKQlzpGFVkNFt7HZiU0dbmfQ7rvH4TcJsaM0Ob35uj-syv84K2StqYevzoNC~4-OwGS27qZ~hjCrtlh2sO-qhUFlGa2DlsdZ26X05N2F6KfNdfrAkTbCiLPgQc5V1M4XmQm78FC5HTPCc4qkSqdUMxdmfCHfYDrRoL3EONwRIMeLzSywNNVBmWyDLCMdScpQ__" 
     },
     { 
       id: 2, 
@@ -148,7 +148,7 @@ function VideoTestimonials() {
       id: 3, 
       name: "Emma R.", 
       video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(2)-Zpa8cvbh0rwJ4powJ5qEmCmlQ18jRp.mp4", 
-      poster: "https://media-hosting.imagekit.io//205a1d350b304f1a/Screenshot%202024-12-06%20at%203.55.52%E2%80%AFPM.png?Expires=1733691360&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=oImXYKSHnZpwv5HYkUB-jkv8GgoYXwhDX4D1BNm~fRT9xX0XbzMSPuVY7jU5egtmZIDKb1SkGELqphZgwWKcO8jcuI1SEPM~PWteYH7i9eAbUBFyHdyKXaVM65TcIQs2WJRW1yMXfitucz~WSrN6Jo1Q172ehLTYNb1yoZEuEXfr7PnIwoyS~q-rPtQBxdnZwXywTcd6aZa6H5bApx5aLtyTOpkiKhk5ZcvrT0RoEDflwF9nWzUfZfTztIw~B6cYVT1jZI9DMKRQt6HuqnRd20PX93pA046MOEj1-5OhlOtJFfqGfH5ry4~PMHisD6JANp5ZbId3-F~Zl50WOtyCPA__" 
+      poster: "https://media-hosting.imagekit.io//b15ad90ef91a4679/Screenshot%202024-12-06%20at%203.58.27%E2%80%AFPM.png?Expires=1733691553&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0~ObEwabGeD~wiLP3hxrBCaaiTzwKTgvt3rhT1o0mgG0bKEZ0XD0~K0hIwYxhrSpxzi91F6W6v28jnHwmGNSBesmOfaLIGdPOvgCIrYSLuyj-uuJgaek69y0JSQWsv99Vf1Hi6SA0n74iq5-X14qzNaaGViSt~bl9xEwkrwVzN9YEPIZQ3gRueN8uFW9uOdyLguoyyhfkZKIV8g01DCOfIkcF1rFO89xO72wb68l9OQo3nzPEGiYdBKwELw-13s4voSDhwsd5ZD3nD6SPBZK8~s5iVajasAgPh8yYt2lhJjvErSEhkzu5-nLkIJA1B-O7TLGXFjZ5TEgNLQt0G8qiw__" 
     },
     { 
       id: 4, 
