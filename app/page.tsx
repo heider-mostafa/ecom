@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Star, TrendingUp } from 'lucide-react'
+import { Star, TrendingUp, Play } from 'lucide-react'
 import Link from 'next/link'
 import { ProductCard } from './components/ProductCard'
 import { products } from './data/products'
@@ -15,6 +15,7 @@ import {
 import { Zap, Truck, Shield } from 'lucide-react'
 import { Droplet, Palette, TruckIcon } from 'lucide-react'
 import Image from 'next/image'
+import { useState, useEffect, useRef } from 'react'
 
 interface TestimonialCardProps {
   name: string;
@@ -36,17 +37,59 @@ export default function Home() {
 }
 
 function HeroSection() {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      video.addEventListener('play', () => setIsPlaying(true))
+      video.addEventListener('pause', () => setIsPlaying(false))
+      
+      // Attempt to play the video
+      const playPromise = video.play()
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          // Autoplay started
+        }).catch(error => {
+          // Autoplay was prevented
+          console.log("Autoplay was prevented:", error)
+        })
+      }
+    }
+  }, [])
+
+  const togglePlay = () => {
+    const video = videoRef.current
+    if (video) {
+      if (isPlaying) {
+        video.pause()
+      } else {
+        video.play()
+      }
+    }
+  }
+
   return (
     <>
       <div className="relative h-[80vh] overflow-hidden">
         <video
+          ref={videoRef}
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9606815-uhd_3840_2160_25fps-G69wvoIkS9QY6sWqRvsioejrWI3a1a.mp4"
-          autoPlay
           loop
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         />
+        {!isPlaying && (
+          <button
+            onClick={togglePlay}
+            className="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300"
+          >
+            <Play className="w-16 h-16 text-white" />
+          </button>
+        )}
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <div className="text-center text-white">
             <Badge variant="secondary" className="mb-4">Discover Rovi</Badge>
