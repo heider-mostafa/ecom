@@ -39,14 +39,11 @@ function HeroSection() {
   return (
     <>
       <div className="relative h-[80vh] overflow-hidden">
-        <video
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9606815-uhd_3840_2160_25fps-G69wvoIkS9QY6sWqRvsioejrWI3a1a.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <video 
+          autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9606815-uhd_3840_2160_25fps-G69wvoIkS9QY6sWqRvsioejrWI3a1a.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <div className="text-center text-white">
             <Badge variant="secondary" className="mb-4">Discover Rovi</Badge>
