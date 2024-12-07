@@ -420,7 +420,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   ref={videoRef}
                   className="w-full h-[600px] object-cover object-top transform -translate-y-[150px]"
                   onClick={togglePlay}
-                  poster="https://media-hosting.imagekit.io//84e175d97aad4145/Screenshot%202024-12-06%20at%203.53.38%E2%80%AFPM.png?Expires=1733691229&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=vxK~YIVgG16ThPEtEBp8RCuim5xD4~96qlk2VnFqcT1Y1mnhRt5j4raTmWL9yEZdO~bmo7NdJ7d2BsuQhrPy3jndONuGaB9ufuGDgjQmUtx-DKwV3vaEIo-TS7NFCHN99xosg~G067BiqZ8pDHvNA675iQWEz5mGbPkHxsA3OxePi0H0eL-V3MMgPdeguYRvH0Bn0SjZlLEFXvw84WgRI7DFxGE6mNMW4jZaJf2rmjfaf~hu1xx6~jMsBNcCJbdn243ByEh3omrATgDNHhmYYD5OdV6HuyEkcJBQJsWLGURQ0KtRwXNMq5gbKUvPIyxtc7y3GAQFwkgklf8o4qWTyA__"
+                  poster="https://media-hosting.imagekit.io//70924e4094f340f0/Screenshot%202024-12-06%20at%203.52.34%E2%80%AFPM.png?Expires=1733691229&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=AGb~MwZaN9YIpBJaMeM7mQVPN0Ll1ssptpzY7ZHFRSra2AKb3LVSeVHiTUdefva0eg-9~mqzvLmR5HTS3Yyl-VJTbQy8KMhG-LTqGjJ2Z5drTQSBNupdPt8Sn-5vA~cI22IViOCB37jUWezgaPNbu2W1sI9aXW6rPKYsKbsbHpqh-ERqZ1NBgmRdgPqsb2dMH8nLKLxUluVr7SdXq8Fn~iVLpbTvQTbWJ1vsJYGWmeyM~TbHi4Lgd~tnjJqtE3P6xLRFgtHr5PUCop0dtLmpCQeAnwuPBCzPAaORc3oXsik8zcT2FA4A~vLVgJ4wjOVxLVOp4dJqcyFi5j-6fOsAhQ__"
                 >
                   <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-SHlRImonOIB3YdC3GZatVxia85lwyt.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
