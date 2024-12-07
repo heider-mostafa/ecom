@@ -45,11 +45,10 @@ function HeroSection() {
           muted 
           playsInline 
           className="absolute inset-0 w-full h-full object-cover"
-          preload="auto"
-          poster="https://example.com/fallback-image.jpg" <!-- Optional: Add a thumbnail fallback -->
+          preload="auto" <!-- Ensures the video starts loading immediately -->
         >
           <source 
-            src="https://media-hosting.imagekit.io//82c849f6c7cc4d9b/9606815-uhd_3840_2160_25fps.mp4?Expires=1733761188&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=fO7XzamYDVkKuaIBLiucIj7oL~d9skbGqv9v~nMA2ye528zsCZIUDwT4Tea2KRMOAKNdXI6RrNl-b5AaezeEAlwCB1h~1-~Zdq7LOeWV~u4myeQHeQVZkxBWhl1fDs4qwJvD0WMPv60bE0sv4Zv5lkLpyxT~ZMJUzSiD9cbhp1MCV4VLMv1~mDonF~PsGjf8mFcM65vCLJNMxvYaebuEnch62M11cIqN0JEK8WnBGbcqzZRL3coZaoCkRq65AxHWti5sMqr96HbiQC3wLHmA9~Ia9KYqi5E74aBbuGnUW0JtrrR8Ddm0I2-gtAx-5Lsia9UNxbfZeW5m35TjdmBoFQ__" 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9606815-uhd_3840_2160_25fps-G69wvoIkS9QY6sWqRvsioejrWI3a1a.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
@@ -74,6 +73,7 @@ function HeroSection() {
     </>
   );
 }
+
 
 
 
