@@ -42,9 +42,10 @@ function HeroSection() {
         <video 
           autoPlay 
           loop 
+          muted
           playsInline 
           className="absolute inset-0 w-full h-full object-cover"
-          preload="auto" <!-- Ensures the video starts loading immediately -->
+          preload="auto" 
         >
           <source 
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9606815-uhd_3840_2160_25fps-G69wvoIkS9QY6sWqRvsioejrWI3a1a.mp4" 
