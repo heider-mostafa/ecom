@@ -76,7 +76,7 @@ function HeroSection() {
       <div className="relative h-[80vh] overflow-hidden">
         <video
           ref={videoRef}
-          src="https://media-hosting.imagekit.io//a12a32990bde483f/5871270-uhd_2160_3840_24fps.mp4?Expires=1733854937&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=rEEBaWczHtE8ZnjTnUvZ3xNlmhVeB4tnaEeLivdICxxFzEBbDScjalw51X5aGlR1ivdykGeclkpLgsuYbYk3Ps4edEpdXxL2f3rZgNQ2mVwyhK4xm4u~brV0ssWhmP7RuzzXNoYpW1BysYQ1u61RfaWBW7g72UWXMMg4via2hKsZBZWGKO~CRZfFsRM66k0RzXlIChLobWeFlObwb-8~s5CEpuuY42ev68YEslDcTe9zsM2aiE6dC0OuXvl2ZmeI9Xva3Jg7d1EKnhSDyuWj7To1pM7nbCc2SJ3CTHgZhRXluQsC8Gczeze3od3zlQuFMVfM0POC6A8One-ylICYKQ__"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9606815-uhd_3840_2160_25fps-G69wvoIkS9QY6sWqRvsioejrWI3a1a.mp4"
           loop
           muted
           playsInline
