@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Star, TrendingUp } from 'lucide-react'
+import { Star, TrendingUp, Play } from 'lucide-react'
 import Link from 'next/link'
 import { ProductCard } from './components/ProductCard'
 import { products } from './data/products'
@@ -15,6 +15,7 @@ import {
 import { Zap, Truck, Shield } from 'lucide-react'
 import { Droplet, Palette, TruckIcon } from 'lucide-react'
 import Image from 'next/image'
+import { useState, useEffect, useRef } from 'react'
 
 interface TestimonialCardProps {
   name: string;
@@ -35,18 +36,60 @@ export default function Home() {
   )
 }
 
-export function HeroSection() {
+function HeroSection() {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      video.addEventListener('play', () => setIsPlaying(true))
+      video.addEventListener('pause', () => setIsPlaying(false))
+      
+      // Attempt to play the video
+      const playPromise = video.play()
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          // Autoplay started
+        }).catch(error => {
+          // Autoplay was prevented
+          console.log("Autoplay was prevented:", error)
+        })
+      }
+    }
+  }, [])
+
+  const togglePlay = () => {
+    const video = videoRef.current
+    if (video) {
+      if (isPlaying) {
+        video.pause()
+      } else {
+        video.play()
+      }
+    }
+  }
+
   return (
     <>
       <div className="relative h-[80vh] overflow-hidden">
         <video
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9606815-uhd_3840_2160_25fps-G69wvoIkS9QY6sWqRvsioejrWI3a1a.mp4"
-          autoPlay
+          ref={videoRef}
+          src="https://media-hosting.imagekit.io//a12a32990bde483f/5871270-uhd_2160_3840_24fps.mp4?Expires=1733854937&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=rEEBaWczHtE8ZnjTnUvZ3xNlmhVeB4tnaEeLivdICxxFzEBbDScjalw51X5aGlR1ivdykGeclkpLgsuYbYk3Ps4edEpdXxL2f3rZgNQ2mVwyhK4xm4u~brV0ssWhmP7RuzzXNoYpW1BysYQ1u61RfaWBW7g72UWXMMg4via2hKsZBZWGKO~CRZfFsRM66k0RzXlIChLobWeFlObwb-8~s5CEpuuY42ev68YEslDcTe9zsM2aiE6dC0OuXvl2ZmeI9Xva3Jg7d1EKnhSDyuWj7To1pM7nbCc2SJ3CTHgZhRXluQsC8Gczeze3od3zlQuFMVfM0POC6A8One-ylICYKQ__"
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-[120%] object-cover object-top -mt-[10%]"
         />
+        {!isPlaying && (
+          <button
+            onClick={togglePlay}
+            className="absolute inset-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300"
+          >
+            <Play className="w-16 h-16 text-white" />
+          </button>
+        )}
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <div className="text-center text-white">
             <Badge variant="secondary" className="mb-4">Discover Rovi</Badge>
@@ -132,10 +175,30 @@ function ProductFacts() {
 
 function VideoTestimonials() {
   const testimonials = [
-    { id: 1, name: "Sarah L.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4" },
-    { id: 2, name: "Mia T.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(4)-EuXeEAABr2q6ttyvjsRpNj4UjTXLYs.mp4" },
-    { id: 3, name: "Emma R.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(2)-Zpa8cvbh0rwJ4powJ5qEmCmlQ18jRp.mp4" },
-    { id: 4, name: "Alex K.", video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-uYuvyhouZQ2AeIdbkfWkFNok8RboDx.mp4" },
+    { 
+      id: 1, 
+      name: "Sarah L.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sarah-poster-zNMxHfXKXBXZXZhHXkVxHGDxTBXTxT.jpg"
+    },
+    { 
+      id: 2, 
+      name: "Mia T.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(4)-EuXeEAABr2q6ttyvjsRpNj4UjTXLYs.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mia-poster-zNMxHfXKXBXZXZhHXkVxHGDxTBXTxT.jpg"
+    },
+    { 
+      id: 3, 
+      name: "Emma R.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(2)-Zpa8cvbh0rwJ4powJ5qEmCmlQ18jRp.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/emma-poster-zNMxHfXKXBXZXZhHXkVxHGDxTBXTxT.jpg"
+    },
+    { 
+      id: 4, 
+      name: "Alex K.", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-uYuvyhouZQ2AeIdbkfWkFNok8RboDx.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/alex-poster-zNMxHfXKXBXZXZhHXkVxHGDxTBXTxT.jpg"
+    },
   ]
 
   return (
@@ -145,10 +208,19 @@ function VideoTestimonials() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col">
-              <video controls className="w-full h-48 object-cover bg-gray-200" style={{ objectPosition: 'center 30%' }}>
-                <source src={testimonial.video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <div className="relative w-full h-48">
+                <video 
+                  controls 
+                  className="w-full h-full object-cover" 
+                  poster={testimonial.poster}
+                >
+                  <source src={testimonial.video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                  <Play className="w-12 h-12 text-white opacity-70" />
+                </div>
+              </div>
               <div className="p-4 flex-grow">
                 <p className="font-semibold">{testimonial.name}</p>
                 <p className="text-sm text-gray-600">Verified Buyer</p>
@@ -252,8 +324,4 @@ function TestimonialCard({ name, rating, text }: TestimonialCardProps) {
     </div>
   )
 }
-
-
-
-
 
