@@ -61,7 +61,7 @@ function HeroSection() {
   );
 }
 
-
+export default HeroSection;
 
 
 function TrendingProducts() {
