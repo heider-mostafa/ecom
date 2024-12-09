@@ -136,26 +136,26 @@ function VideoTestimonials() {
     { 
       id: 1, 
       name: "Sarah L.", 
-      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4", 
-      poster: "https://media-hosting.imagekit.io//f7db17c37ac24004/Screenshot%202024-12-06%20at%203.58.59%E2%80%AFPM.png?Expires=1733691553&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ACrkrEVLuFKJzSW5CY0-W5HUCtkKxmjSd3O-uYcW0uC24qhFI1eiD7OeEjBJUUPawzkOSLk6pDgIsK4uJhmcsB6RF7WkkzyheifxwBrlgn2aYZwcFGbzHzzgJZqLWuFZNzU~UqG1Q-cfpTdNNdJCSzTKQlzpGFVkNFt7HZiU0dbmfQ7rvH4TcJsaM0Ob35uj-syv84K2StqYevzoNC~4-OwGS27qZ~hjCrtlh2sO-qhUFlGa2DlsdZ26X05N2F6KfNdfrAkTbCiLPgQc5V1M4XmQm78FC5HTPCc4qkSqdUMxdmfCHfYDrRoL3EONwRIMeLzSywNNVBmWyDLCMdScpQ__" 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.58.59%E2%80%AFPM-aJ0MAtbgZqEDyxYOhPP1zWDNr7sCSS.png"
     },
     { 
       id: 2, 
       name: "Mia T.", 
       video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(4)-EuXeEAABr2q6ttyvjsRpNj4UjTXLYs.mp4", 
-      poster: "https://media-hosting.imagekit.io//84e175d97aad4145/Screenshot%202024-12-06%20at%203.53.38%E2%80%AFPM.png?Expires=1733691229&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=vxK~YIVgG16ThPEtEBp8RCuim5xD4~96qlk2VnFqcT1Y1mnhRt5j4raTmWL9yEZdO~bmo7NdJ7d2BsuQhrPy3jndONuGaB9ufuGDgjQmUtx-DKwV3vaEIo-TS7NFCHN99xosg~G067BiqZ8pDHvNA675iQWEz5mGbPkHxsA3OxePi0H0eL-V3MMgPdeguYRvH0Bn0SjZlLEFXvw84WgRI7DFxGE6mNMW4jZaJf2rmjfaf~hu1xx6~jMsBNcCJbdn243ByEh3omrATgDNHhmYYD5OdV6HuyEkcJBQJsWLGURQ0KtRwXNMq5gbKUvPIyxtc7y3GAQFwkgklf8o4qWTyA__" 
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.53.38%E2%80%AFPM-gkske3nQsHnBw4ZaQuyPWb2Rb0J35t.png"
     },
     { 
       id: 3, 
       name: "Emma R.", 
-      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(2)-Zpa8cvbh0rwJ4powJ5qEmCmlQ18jRp.mp4", 
-      poster: "https://media-hosting.imagekit.io//b15ad90ef91a4679/Screenshot%202024-12-06%20at%203.58.27%E2%80%AFPM.png?Expires=1733691553&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0~ObEwabGeD~wiLP3hxrBCaaiTzwKTgvt3rhT1o0mgG0bKEZ0XD0~K0hIwYxhrSpxzi91F6W6v28jnHwmGNSBesmOfaLIGdPOvgCIrYSLuyj-uuJgaek69y0JSQWsv99Vf1Hi6SA0n74iq5-X14qzNaaGViSt~bl9xEwkrwVzN9YEPIZQ3gRueN8uFW9uOdyLguoyyhfkZKIV8g01DCOfIkcF1rFO89xO72wb68l9OQo3nzPEGiYdBKwELw-13s4voSDhwsd5ZD3nD6SPBZK8~s5iVajasAgPh8yYt2lhJjvErSEhkzu5-nLkIJA1B-O7TLGXFjZ5TEgNLQt0G8qiw__" 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(2)-Zpa8cvbh0rwJ4powJ5qEmCmlQ18jRp.mp4",
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.58.27%E2%80%AFPM-nW0Rq9Yg6iTQxTNLJGZ6yJzWiFQfEj.png"
     },
     { 
       id: 4, 
       name: "Alex K.", 
       video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-uYuvyhouZQ2AeIdbkfWkFNok8RboDx.mp4", 
-      poster: "https://media-hosting.imagekit.io//70924e4094f340f0/Screenshot%202024-12-06%20at%203.52.34%E2%80%AFPM.png?Expires=1733691229&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=AGb~MwZaN9YIpBJaMeM7mQVPN0Ll1ssptpzY7ZHFRSra2AKb3LVSeVHiTUdefva0eg-9~mqzvLmR5HTS3Yyl-VJTbQy8KMhG-LTqGjJ2Z5drTQSBNupdPt8Sn-5vA~cI22IViOCB37jUWezgaPNbu2W1sI9aXW6rPKYsKbsbHpqh-ERqZ1NBgmRdgPqsb2dMH8nLKLxUluVr7SdXq8Fn~iVLpbTvQTbWJ1vsJYGWmeyM~TbHi4Lgd~tnjJqtE3P6xLRFgtHr5PUCop0dtLmpCQeAnwuPBCzPAaORc3oXsik8zcT2FA4A~vLVgJ4wjOVxLVOp4dJqcyFi5j-6fOsAhQ__" 
+      poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.52.34%E2%80%AFPM-A06kesf4rYuv6uwHvC54uNXHkfkjOE.png"
     },
   ]
   return (
@@ -274,5 +274,4 @@ function TestimonialCard({ name, rating, text }: TestimonialCardProps) {
     </div>
   )
 }
-
 
