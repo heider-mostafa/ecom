@@ -420,7 +420,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   ref={videoRef}
                   className="w-full h-[600px] object-cover object-top transform -translate-y-[150px]"
                   onClick={togglePlay}
-                  poster="https://media-hosting.imagekit.io//70924e4094f340f0/Screenshot%202024-12-06%20at%203.52.34%E2%80%AFPM.png?Expires=1733691229&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=AGb~MwZaN9YIpBJaMeM7mQVPN0Ll1ssptpzY7ZHFRSra2AKb3LVSeVHiTUdefva0eg-9~mqzvLmR5HTS3Yyl-VJTbQy8KMhG-LTqGjJ2Z5drTQSBNupdPt8Sn-5vA~cI22IViOCB37jUWezgaPNbu2W1sI9aXW6rPKYsKbsbHpqh-ERqZ1NBgmRdgPqsb2dMH8nLKLxUluVr7SdXq8Fn~iVLpbTvQTbWJ1vsJYGWmeyM~TbHi4Lgd~tnjJqtE3P6xLRFgtHr5PUCop0dtLmpCQeAnwuPBCzPAaORc3oXsik8zcT2FA4A~vLVgJ4wjOVxLVOp4dJqcyFi5j-6fOsAhQ__"
+                  poster="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.52.34%E2%80%AFPM-gQciIMC2VJFHzqzMm6n5SE6NWzdIvN.png"
                 >
                   <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-SHlRImonOIB3YdC3GZatVxia85lwyt.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
