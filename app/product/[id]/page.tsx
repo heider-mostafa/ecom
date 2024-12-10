@@ -340,7 +340,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 </div>
                 <div id="product-component-bundle1" className="w-48"></div>
               </article>
-              <article className="flex items-center justify-between bg-white rounded-lg overflow-hidden shadow-lg p-4 relative">
+              <article className="flex items-center justify-between bg-white rounded-lg overflow-visible shadow-lg p-4 relative">
                 <div className="absolute top-0 left-0 bg-black text-white px-2 py-1 text-xs font-bold uppercase rounded-br">
                   Best Value
                 </div>
