@@ -344,6 +344,9 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 <div className="absolute top-0 left-0 bg-black text-white px-2 py-1 text-xs font-bold uppercase rounded-br">
                   Best Value
                 </div>
+                <div className="bg-green-500 text-white px-2 py-1 text-xs font-bold uppercase">
+                    +Free Shipping
+                  </div>
                 <div className="flex items-center">
                   <Image
                     src={product.image}
