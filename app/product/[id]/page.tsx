@@ -344,9 +344,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 <div className="absolute top-0 left-0 bg-black text-white px-2 py-1 text-xs font-bold uppercase rounded-br">
                   Best Value
                 </div>
-                <div className="bg-green-500 text-white px-2 py-1 text-xs font-bold uppercase">
-                    +Free Shipping
-                  </div>
                 <div className="flex items-center">
                   <Image
                     src={product.image}
@@ -355,14 +352,22 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                     height={50}
                     className="rounded-md mr-4"
                   />
-                  <div>
-                    <h4 className="text-lg font-semibold">Buy 3, Get 2 Free</h4>
-                    <p className="text-xl font-bold text-primary">$29.99</p>
-                  </div>
+                <div>
+                  <h4 className="text-lg font-semibold">Buy 3, Get 2 Free</h4>
+                  <p className="text-xl font-bold text-primary">$29.99</p>
                 </div>
-                <div id="product-component-bundle2" className="w-48"></div>
-              </article>
+              </div>
+            <div id="product-component-bundle2" className="w-48"></div>
+
+    {/* Extension for "Unlock Free Shipping 🚚" */}
+            <div
+              className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-black text-white px-3 py-1 text-xs font-bold uppercase rounded-lg shadow-md"
+              style={{ whiteSpace: "nowrap" }}
+            >
+              Unlock Free Shipping 🚚
             </div>
+          </article>
+        </div>
           </section>
           <div className="border-b border-gray-200 my-16"></div>
           <section className="mb-16" aria-labelledby="inventory-heading">
