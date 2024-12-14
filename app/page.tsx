@@ -136,7 +136,7 @@ function VideoTestimonials() {
     { 
       id: 1, 
       name: "Sarah L.", 
-      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(3)-4pKFRDo3TuMesvrHOztK7t7LoXOzFN.mp4",
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/34035799b055410fba9be55403296d35-IJuqCK6lh5nBKCkgqPKY82gO9phE1H.MOV",
       poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.58.59%E2%80%AFPM-aJ0MAtbgZqEDyxYOhPP1zWDNr7sCSS.png"
     },
     { 
@@ -154,7 +154,7 @@ function VideoTestimonials() {
     { 
       id: 4, 
       name: "Alex K.", 
-      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(6)-uYuvyhouZQ2AeIdbkfWkFNok8RboDx.mp4", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/81a0c75c3da2493e93d1c4f712dc20b4-O59s8An1VfHC230rWhg0JxgYzq02Sr.MOV", 
       poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.52.34%E2%80%AFPM-A06kesf4rYuv6uwHvC54uNXHkfkjOE.png"
     },
   ]
