@@ -142,7 +142,7 @@ function VideoTestimonials() {
     { 
       id: 2, 
       name: "Mia T.", 
-      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20(4)-EuXeEAABr2q6ttyvjsRpNj4UjTXLYs.mp4", 
+      video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e498206e47244811abca8d3640adb40c-hClY9sYX3RGQeSHCDJ4b4OAr7wcwSh.MOV", 
       poster: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.53.38%E2%80%AFPM-gkske3nQsHnBw4ZaQuyPWb2Rb0J35t.png"
     },
     { 
