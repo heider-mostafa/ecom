@@ -4,7 +4,6 @@ import { useEffect, Suspense } from 'react'
 import Script from 'next/script'
 import { usePathname, useSearchParams } from 'next/navigation'
 
-// Extend the Window interface to include dataLayer
 declare global {
   interface Window {
     dataLayer: any[];
@@ -19,8 +18,9 @@ function GoogleTagManagerInner() {
     const handleRouteChange = (url: string) => {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: 'pageview',
-        page: url,
+        event: 'page_view',
+        page_location: url,
+        page_title: document.title,
       })
     }
 
@@ -66,6 +66,81 @@ export function GoogleTagManager() {
     </>
   )
 }
+
+// Helper functions for ecommerce events
+export function viewItem(item: any) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+  window.dataLayer.push({
+    event: "view_item",
+    ecommerce: {
+      currency: "USD",
+      value: item.price,
+      items: [{
+        item_id: item.id,
+        item_name: item.name,
+        price: item.price,
+        quantity: 1
+      }]
+    }
+  });
+}
+
+export function addToCart(item: any, quantity: number) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+  window.dataLayer.push({
+    event: "add_to_cart",
+    ecommerce: {
+      currency: "USD",
+      value: item.price * quantity,
+      items: [{
+        item_id: item.id,
+        item_name: item.name,
+        price: item.price,
+        quantity: quantity
+      }]
+    }
+  });
+}
+
+export function beginCheckout(items: any[]) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+  window.dataLayer.push({
+    event: "begin_checkout",
+    ecommerce: {
+      currency: "USD",
+      value: items.reduce((total, item) => total + item.price * item.quantity, 0),
+      items: items.map(item => ({
+        item_id: item.id,
+        item_name: item.name,
+        price: item.price,
+        quantity: item.quantity
+      }))
+    }
+  });
+}
+
+export function purchase(transactionId: string, items: any[]) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+  window.dataLayer.push({
+    event: "purchase",
+    ecommerce: {
+      transaction_id: transactionId,
+      currency: "USD",
+      value: items.reduce((total, item) => total + item.price * item.quantity, 0),
+      items: items.map(item => ({
+        item_id: item.id,
+        item_name: item.name,
+        price: item.price,
+        quantity: item.quantity
+      }))
+    }
+  });
+}
+
 
 
 
