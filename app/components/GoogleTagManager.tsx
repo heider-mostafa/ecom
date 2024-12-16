@@ -2,19 +2,30 @@
 
 import { useEffect } from 'react'
 import Script from 'next/script'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 export function GoogleTagManager() {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
   useEffect(() => {
-    const initGTM = () => {
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
+    const handleRouteChange = (url: string) => {
+      if (typeof window.dataLayer !== 'undefined') {
+        window.dataLayer.push({
+          event: 'pageview',
+          page: url,
+        })
+      }
     }
 
-    initGTM();
-  }, []);
+    const url = `${pathname}${searchParams?.toString() ? `?${searchParams.toString()}` : ''}`
+    handleRouteChange(url)
+
+    // Check if it's a product page and reload if necessary
+    if (pathname.startsWith('/product/') && !window.location.href.includes('reloaded=true')) {
+      window.location.href = `${window.location.href}${window.location.href.includes('?') ? '&' : '?'}reloaded=true`
+    }
+  }, [pathname, searchParams])
 
   return (
     <>
@@ -42,4 +53,3 @@ export function GoogleTagManager() {
     </>
   )
 }
-
