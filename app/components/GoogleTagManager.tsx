@@ -97,11 +97,23 @@ export function addToCart(item: any, quantity: number) {
       items: [{
         item_id: item.id,
         item_name: item.name,
+        item_category: item.category || "",
         price: item.price,
-        quantity: quantity,
-        currency: "USD",
-        item_category: item.category || "Lip Gloss",  // Add a default category if not provided
-        item_variant: item.variant || "Default",  // Add a default variant if not provided
+        quantity: quantity
+      }]
+    }
+  });
+  console.log('Add to cart event pushed to dataLayer:', {
+    event: "add_to_cart",
+    ecommerce: {
+      currency: "USD",
+      value: item.price * quantity,
+      items: [{
+        item_id: item.id,
+        item_name: item.name,
+        item_category: item.category || "",
+        price: item.price,
+        quantity: quantity
       }]
     }
   });
@@ -143,7 +155,6 @@ export function purchase(transactionId: string, items: any[]) {
     }
   });
 }
-
 
 
 
