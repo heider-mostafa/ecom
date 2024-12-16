@@ -18,6 +18,7 @@ import { useCart } from '../../contexts/CartContext'
 import { useToast } from "@/components/ui/use-toast"
 import { Card, CardContent } from "@/components/ui/card"
 import { useSearchParams } from 'next/navigation'
+import { viewItem, addToCart } from '../../components/GoogleTagManager'
 
 const products = [
   { 
@@ -91,7 +92,7 @@ const products = [
 export default function ProductPage({ params }: { params: { id: string } }) {
   const product = products.find(p => p.id === parseInt(params.id))
   const [quantity, setQuantity] = useState(1)
-  const { addToCart } = useCart()
+  const { addToCart: addToCartContext } = useCart()
   const { toast } = useToast()
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -107,7 +108,12 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       url.searchParams.delete('reloaded')
       window.history.replaceState({}, '', url)
     }
-  }, [reloaded])
+
+    // Trigger view_item event
+    if (product) {
+      viewItem(product)
+    }
+  }, [reloaded, product])
 
   const isPearlKisses = product?.name.includes("Pearl Kisses")
   const isCrimsonCrush = product?.name.includes("Crimson Crush")
@@ -274,6 +280,22 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     }
   }
 
+  const handleAddToCart = () => {
+    if (product) {
+      addToCartContext({
+        id: product.id,
+        name: product.name,
+        price: product.price || 0,
+        quantity: quantity
+      })
+      addToCart(product, quantity)  // Trigger add_to_cart event
+      toast({
+        title: "Added to cart",
+        description: `${quantity} ${product.name} added to your cart.`,
+      })
+    }
+  }
+
   return (
     <div className="container mx-auto px-4 py-12">
       <Link href="/" className="inline-flex items-center text-black hover:underline mb-8">
@@ -364,22 +386,22 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                     height={50}
                     className="rounded-md mr-4"
                   />
-                <div>
-                  <h4 className="text-lg font-semibold">Buy 3, Get 2 Free</h4>
-                  <p className="text-xl font-bold text-primary">$29.99</p>
+                  <div>
+                    <h4 className="text-lg font-semibold">Buy 3, Get 2 Free</h4>
+                    <p className="text-xl font-bold text-primary">$29.99</p>
+                  </div>
                 </div>
-              </div>
-            <div id="product-component-bundle2" className="w-48"></div>
+                <div id="product-component-bundle2" className="w-48"></div>
 
-    {/* Extension for "Unlock Free Shipping 🚚" */}
-            <div
-              className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-black text-white px-3 py-1 text-xs font-bold uppercase rounded-lg shadow-md"
-              style={{ whiteSpace: "nowrap" }}
-            >
-              Unlock Free Shipping 🚚
+                {/* Extension for "Unlock Free Shipping 🚚" */}
+                <div
+                  className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-black text-white px-3 py-1 text-xs font-bold uppercase rounded-lg shadow-md"
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  Unlock Free Shipping 🚚
+                </div>
+              </article>
             </div>
-          </article>
-        </div>
           </section>
           <div className="border-b border-gray-200 my-16"></div>
           <section className="mb-16" aria-labelledby="inventory-heading">
@@ -398,6 +420,13 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           <div className="container mx-auto px-4 mb-16">
             <div className="bg-white rounded-lg overflow-hidden shadow-lg p-6">
               <div id="product-component-main"></div>
+              <Button 
+                onClick={handleAddToCart}
+                className="w-full mt-4 bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded transition-colors duration-200"
+              >
+                <ShoppingCart className="w-5 h-5 mr-2" />
+                Add to Cart
+              </Button>
             </div>
           </div>
           <section aria-labelledby="testimonials-heading">
@@ -536,4 +565,5 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     </div>
   )
 }
+
 
