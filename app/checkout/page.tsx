@@ -3,9 +3,26 @@
 import { useCart } from '../contexts/CartContext'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
+import { useEffect } from 'react'
+import { beginCheckout, purchase } from '../components/GoogleTagManager'
 
 export default function CheckoutPage() {
-  const { cart, removeFromCart, getCartTotal } = useCart()
+  const { cart, removeFromCart, getCartTotal, clearCart } = useCart()
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      beginCheckout(cart)
+    }
+  }, [cart])
+
+  const handlePlaceOrder = () => {
+    // Here you would typically process the order
+    // For this example, we'll just simulate a successful purchase
+    const transactionId = `T-${Date.now()}`
+    purchase(transactionId, cart)
+    clearCart()
+    // You might want to redirect to a success page or show a success message
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -37,7 +54,7 @@ export default function CheckoutPage() {
           </div>
           <div>
             <h2 className="text-xl font-semibold mb-4">Shipping Information</h2>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); handlePlaceOrder(); }}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
                 <input type="text" id="name" name="name" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" required />
@@ -70,4 +87,5 @@ export default function CheckoutPage() {
     </div>
   )
 }
+
 
