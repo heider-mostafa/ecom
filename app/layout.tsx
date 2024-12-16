@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Header } from './components/Header'
-import { TrackingPixel } from './components/TrackingPixel'
 import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
