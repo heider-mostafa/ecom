@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import Script from 'next/script'
 import { usePathname, useSearchParams } from 'next/navigation'
 
@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-export function GoogleTagManager() {
+function GoogleTagManagerInner() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -33,6 +33,10 @@ export function GoogleTagManager() {
     }
   }, [pathname, searchParams])
 
+  return null
+}
+
+export function GoogleTagManager() {
   return (
     <>
       <Script
@@ -56,8 +60,12 @@ export function GoogleTagManager() {
           style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
       </noscript>
+      <Suspense fallback={null}>
+        <GoogleTagManagerInner />
+      </Suspense>
     </>
   )
 }
+
 
 
