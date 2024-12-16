@@ -98,7 +98,10 @@ export function addToCart(item: any, quantity: number) {
         item_id: item.id,
         item_name: item.name,
         price: item.price,
-        quantity: quantity
+        quantity: quantity,
+        currency: "USD",
+        item_category: item.category || "Lip Gloss",  // Add a default category if not provided
+        item_variant: item.variant || "Default",  // Add a default variant if not provided
       }]
     }
   });
