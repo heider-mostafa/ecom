@@ -49,7 +49,6 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-          <TrackingPixel />
         </CartProvider>
       </body>
     </html>
@@ -111,4 +110,5 @@ From soft, everyday shades to bold, statement-making hues, our collection is des
     </>
   )
 }
+
 
