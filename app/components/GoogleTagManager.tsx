@@ -4,18 +4,24 @@ import { useEffect } from 'react'
 import Script from 'next/script'
 import { usePathname, useSearchParams } from 'next/navigation'
 
+// Extend the Window interface to include dataLayer
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 export function GoogleTagManager() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      if (typeof window.dataLayer !== 'undefined') {
-        window.dataLayer.push({
-          event: 'pageview',
-          page: url,
-        })
-      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'pageview',
+        page: url,
+      })
     }
 
     const url = `${pathname}${searchParams?.toString() ? `?${searchParams.toString()}` : ''}`
@@ -53,3 +59,5 @@ export function GoogleTagManager() {
     </>
   )
 }
+
+
