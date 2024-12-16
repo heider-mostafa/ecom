@@ -282,6 +282,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
   const handleAddToCart = () => {
     if (product) {
+      console.log('Adding to cart:', product, 'Quantity:', quantity);
       addToCartContext({
         id: product.id,
         name: product.name,
@@ -565,5 +566,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     </div>
   )
 }
+
 
 
