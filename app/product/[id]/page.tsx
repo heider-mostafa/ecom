@@ -17,6 +17,7 @@ import {
 import { useCart } from '../../contexts/CartContext'
 import { useToast } from "@/components/ui/use-toast"
 import { Card, CardContent } from "@/components/ui/card"
+import { useSearchParams } from 'next/navigation'
 
 const products = [
   { 
@@ -96,6 +97,17 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [stock, setStock] = useState(Math.floor(Math.random() * 100) + 1)
   const stockPercentage = (stock / 100) * 100
+
+  const searchParams = useSearchParams()
+  const reloaded = searchParams.get('reloaded')
+
+  useEffect(() => {
+    if (reloaded === 'true') {
+      const url = new URL(window.location.href)
+      url.searchParams.delete('reloaded')
+      window.history.replaceState({}, '', url)
+    }
+  }, [reloaded])
 
   const isPearlKisses = product?.name.includes("Pearl Kisses")
   const isCrimsonCrush = product?.name.includes("Crimson Crush")
@@ -431,7 +443,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   poster="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.52.34%E2%80%AFPM-gQciIMC2VJFHzqzMm6n5SE6NWzdIvN.png"
                 >
                   <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/81a0c75c3da2493e93d1c4f712dc20b4-O59s8An1VfHC230rWhg0JxgYzq02Sr.MOV" type="video/quicktime" />
-
                   Your browser does not support the video tag.
                 </video>
                 {!isPlaying && (
