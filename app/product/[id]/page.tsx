@@ -430,7 +430,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   onClick={togglePlay}
                   poster="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-12-06%20at%203.52.34%E2%80%AFPM-gQciIMC2VJFHzqzMm6n5SE6NWzdIvN.png"
                 >
-                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/81a0c75c3da2493e93d1c4f712dc20b4-O59s8An1VfHC230rWhg0JxgYzq02Sr.MOV" type="video/quicktime" />
+                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/81a0c75c3da2493e93d1c4f712dc20b4-O59s8An1VfHC230rWhg0JxgYzq02Sr.MOV", />
                   Your browser does not support the video tag.
                 </video>
                 {!isPlaying && (
