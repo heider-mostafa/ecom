@@ -15,8 +15,10 @@ function GoogleTagManagerInner() {
   const searchParams = useSearchParams()
 
   useEffect(() => {
+    // Initialize dataLayer
+    window.dataLayer = window.dataLayer || [];
+
     const handleRouteChange = (url: string) => {
-      window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'page_view',
         page_location: url,
@@ -49,6 +51,16 @@ export function GoogleTagManager() {
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-N3KDKXZW');
+
+            // Initialize dataLayer
+            window.dataLayer = window.dataLayer || [];
+            
+            // Debug function to log all dataLayer pushes
+            const originalPush = Array.prototype.push;
+            window.dataLayer.push = function() {
+              console.log('DataLayer Push:', ...arguments);
+              return originalPush.apply(this, arguments);
+            };
           `,
         }}
       />
@@ -69,6 +81,9 @@ export function GoogleTagManager() {
 
 // Helper functions for ecommerce events
 export function viewItem(item: any) {
+  if (typeof window === 'undefined') return;
+  
+  console.log('Triggering view_item event');
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
   window.dataLayer.push({
@@ -87,9 +102,16 @@ export function viewItem(item: any) {
 }
 
 export function addToCart(item: any, quantity: number) {
+  if (typeof window === 'undefined') return;
+  
+  console.log('Triggering add_to_cart event');
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-  window.dataLayer.push({
+  
+  // First, clear the previous ecommerce object
+  window.dataLayer.push({ ecommerce: null });
+  
+  // Then, push the add_to_cart event
+  const eventData = {
     event: "add_to_cart",
     ecommerce: {
       currency: "USD",
@@ -97,31 +119,23 @@ export function addToCart(item: any, quantity: number) {
       items: [{
         item_id: item.id,
         item_name: item.name,
-        item_category: item.category || "",
+        item_category: "Lip Gloss",
         price: item.price,
         quantity: quantity
       }]
     }
-  });
-  console.log('Add to cart event pushed to dataLayer:', {
-    event: "add_to_cart",
-    ecommerce: {
-      currency: "USD",
-      value: item.price * quantity,
-      items: [{
-        item_id: item.id,
-        item_name: item.name,
-        item_category: item.category || "",
-        price: item.price,
-        quantity: quantity
-      }]
-    }
-  });
+  };
+  
+  console.log('Pushing add_to_cart event with data:', eventData);
+  window.dataLayer.push(eventData);
 }
 
 export function beginCheckout(items: any[]) {
+  if (typeof window === 'undefined') return;
+  
+  console.log('Triggering begin_checkout event');
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+  window.dataLayer.push({ ecommerce: null });
   window.dataLayer.push({
     event: "begin_checkout",
     ecommerce: {
@@ -138,8 +152,11 @@ export function beginCheckout(items: any[]) {
 }
 
 export function purchase(transactionId: string, items: any[]) {
+  if (typeof window === 'undefined') return;
+  
+  console.log('Triggering purchase event');
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+  window.dataLayer.push({ ecommerce: null });
   window.dataLayer.push({
     event: "purchase",
     ecommerce: {
@@ -155,6 +172,7 @@ export function purchase(transactionId: string, items: any[]) {
     }
   });
 }
+
 
 
 
